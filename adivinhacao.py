@@ -1,14 +1,16 @@
 import random
 
 numero_aleatorio = random.randint(0, 50)
-controle = True
+tentativas = 5
 
-while(controle == True):
+while(tentativas != 0):
 
     chute = int(input('Digite seu chute:\n'))
 
     if chute == numero_aleatorio:
         print('\nParabéns você ganhou')
-        controle = False
+        tentativas = 0
     else:
-        print('\nVocê errou, tente novamente')
+        tentativas -= 1
+        print('\nVocê errou, mas ainda tem '+str(tentativas)+' Tentativas')
+        
